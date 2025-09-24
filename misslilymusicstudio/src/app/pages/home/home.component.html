@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="profile-wrapper" [ngClass]="{'fade-in': shouldAnimate}">
+        <span class="text-front">Miss Lily's</span>
+        <app-profile-picture altText="Lily's Picture" size="450px"
+            imageUrl="/assets/images/missLily.jpg"></app-profile-picture>
+        <span class="text-back">Music Studio</span>
+    </div>
+    <canvas #bubblesCanvas class="bubbles-canvas"></canvas>
+</div>

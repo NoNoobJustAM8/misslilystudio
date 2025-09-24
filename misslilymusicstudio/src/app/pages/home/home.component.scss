@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, var(--color-mustard-900), var(--color-mustard));
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animación de fading */
+.profile-wrapper.fade-in {
+    .text-front {
+        animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    .text-back {
+        animation: fadeIn 1.5s ease-in-out 0.3s forwards;
+    }
+
+    app-profile-picture {
+        animation: fadeIn 1.5s ease-in-out 0.6s forwards;
+    }
+}
+
+.text-front,
+.text-back {
+    font-size: 5.5rem;
+    position: absolute;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+}
+
+.text-front {
+    color: var(--color-rose-pink);
+    font-family: 'Limelight', cursive;
+    z-index: 10;
+    top: -50px;
+}
+
+.text-back {
+    color: var(--color-mustard-300);
+    font-family: 'Allura', cursive;
+    z-index: 8;
+    bottom: 5px;
+}
+
+app-profile-picture {
+    z-index: 5;
+    opacity: 0;
+}
+
+/* Keyframes para la animación de fading */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive: Ajustar para móviles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        /* Menos padding en móviles */
+    }
+
+    .text-front,
+    .text-back {
+        font-size: 3rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-front {
+        top: -30px;
+    }
+
+    .text-back {
+        top: 30px;
+    }
+}
+
+/* Responsive: Ajustar para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .text-front,
+    .text-back {
+        font-size: 2rem;
+    }
+
+    .text-front {
+        top: -40px;
+    }
+
+    .text-back {
+        top: 40px;
+    }
+}

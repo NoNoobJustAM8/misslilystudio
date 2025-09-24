@@ -1,0 +1,24 @@
+.profile-picture {
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Ajusta la imagen para cubrir el círculo */
+  border: 3px solid var(--color-mustard); /* Borde con color Mustard */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  display: block; /* Evita márgenes no deseados */
+  width: var(--size, 100px); /* Esto utiliza la variable --size */
+  height: var(--size, 100px); /* Mantiene relación 1:1 */
+  aspect-ratio: 1 / 1; /* Forza relación 1:1 para evitar óvalos */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-picture {
+    --size: 275px; /* Tamaño para móviles */
+    border-width: 2px; /* Borde más fino */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .profile-picture {
+    --size: 350px; /* Tamaño para tablets */
+  }
+}
