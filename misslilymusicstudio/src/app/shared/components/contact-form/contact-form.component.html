@@ -1,0 +1,20 @@
+<div class="contact-form">
+    <h2>Contact</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" [(ngModel)]="formData.name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" [(ngModel)]="formData.email" name="email" required>
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" [(ngModel)]="formData.message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>

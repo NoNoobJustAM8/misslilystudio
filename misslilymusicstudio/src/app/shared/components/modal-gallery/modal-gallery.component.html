@@ -1,0 +1,16 @@
+<div class="gallery-content" *ngIf="!isEnlarged">
+    <h2>Gallery</h2>
+    <div class="gallery-images">
+        <img *ngFor="let image of images; let i = index" [src]="image.src" [alt]="image.alt" (click)="openEnlarged(i)"
+            style="max-width: 100%; margin: 10px; cursor: pointer;">
+    </div>
+</div>
+
+<div class="enlarged-view" *ngIf="isEnlarged">
+    <div class="enlarged-image-container">
+        <button class="nav-button prev" (click)="prevImage()">←</button>
+        <img [src]="images[currentIndex].src" [alt]="images[currentIndex].alt" class="enlarged-image">
+        <button class="nav-button next" (click)="nextImage()">→</button>
+        <button class="close-button" (click)="closeEnlarged()">X</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.about-content {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Lora', serif; // Cuerpo en Lora
+    font-size: 16px;
+    line-height: 1.6;
+
+    h2 {
+        font-family: 'Limelight', cursive; // Títulos en Limelight
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+    img {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+
+.image {
+    margin-top: 32px;
+    justify-content: center;
+    text-align: center;
+    justify-self: center;
+}
+
+.signature {
+    font-family: 'Allura', cursive;
+    font-size: 32px;
+}
