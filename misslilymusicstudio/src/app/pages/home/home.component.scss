@@ -8,6 +8,8 @@
     box-sizing: border-box;
     width: 100vw;
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 .profile-wrapper {
@@ -15,9 +17,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 3;
+    /* Sobre el container y canvas */
 }
 
-/* Animación de fading */
 .profile-wrapper.fade-in {
     .text-front {
         animation: fadeIn 1.5s ease-in-out forwards;
@@ -52,7 +55,7 @@
     color: var(--color-mustard-300);
     font-family: 'Allura', cursive;
     z-index: 8;
-    bottom: 5px;
+    bottom: -50px;
 }
 
 app-profile-picture {
@@ -60,7 +63,15 @@ app-profile-picture {
     opacity: 0;
 }
 
-/* Keyframes para la animación de fading */
+.bubbles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -73,11 +84,9 @@ app-profile-picture {
     }
 }
 
-/* Responsive: Ajustar para móviles */
 @media (max-width: 600px) {
     .container {
         padding: 10px;
-        /* Menos padding en móviles */
     }
 
     .text-front,
@@ -91,16 +100,15 @@ app-profile-picture {
     }
 
     .text-back {
-        top: 30px;
+        bottom: -30px;
     }
 }
 
-/* Responsive: Ajustar para tablets */
 @media (min-width: 601px) and (max-width: 1024px) {
 
     .text-front,
     .text-back {
-        font-size: 2rem;
+        font-size: 4rem;
     }
 
     .text-front {
@@ -108,6 +116,6 @@ app-profile-picture {
     }
 
     .text-back {
-        top: 40px;
+        bottom: -40px;
     }
 }
